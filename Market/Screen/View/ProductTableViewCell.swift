@@ -25,7 +25,7 @@ class ProductTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        productViewCustomization()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -41,7 +41,18 @@ class ProductTableViewCell: UITableViewCell {
         descriptionLabel.text = product.description
         priceLabel.text = "\(String(describing: product.price)) ₺"
         productImageView.setImage(with: product.image)
-        
+    }
+    
+    private func productViewCustomization() {
+        productBackgroundView.clipsToBounds = false
+        productBackgroundView.layer.cornerRadius = 15
+        productImageView.layer.cornerRadius = 10
+        self.productBackgroundView.backgroundColor = .systemGray6
+    }
+    
+    //ACTION
+    @IBAction func buyButtonTapped(_ button: UIButton) {
+        print("Buy button tapped in here")
     }
     
 }
