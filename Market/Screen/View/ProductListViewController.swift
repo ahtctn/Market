@@ -18,7 +18,9 @@ class ProductListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configuration()
-        print("\(viewModel.products.count) SAYI")
+        
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 }
 
@@ -40,7 +42,7 @@ extension ProductListViewController {
             switch event {
             case .loading:
                 ///Indicator show
-                print("ProductLoa ding")
+                print("Product Loading")
                 break
             case .stopLoading :
                 ///Indicator Hide
@@ -71,8 +73,6 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.Cell.id, for: indexPath) as? ProductTableViewCell else { return UITableViewCell() }
         cell.product = product
-        
-        
         return cell
     }
     
