@@ -30,8 +30,6 @@ class ProductTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func productDetailConfiguration() {
@@ -52,7 +50,7 @@ class ProductTableViewCell: UITableViewCell {
     
     //ACTION
     @IBAction func buyButtonTapped(_ button: UIButton) {
-        print("Buy button tapped in here")
+        
     }
     
 }
